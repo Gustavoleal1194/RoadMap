@@ -1,21 +1,28 @@
-<script setup>
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
-  Hello World
-  <RouterView />
+  <div>
+    <header>
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">about</router-link>
+        <router-link to="/contador-simples">Contador</router-link>
+
+        <!-- Adicione mais links conforme necessário -->
+      </nav>
+    </header>
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
+
+<script setup>
+import { RouterView } from 'vue-router';
+</script>
 
 <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 nav {
@@ -50,21 +57,10 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
   nav {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
