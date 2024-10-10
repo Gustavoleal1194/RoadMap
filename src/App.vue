@@ -5,6 +5,8 @@
         <router-link to="/">Home</router-link>
         <router-link to="/about">about</router-link>
         <router-link to="/contador-simples">Contador</router-link>
+        <router-link to="/contador-teste">contador-teste</router-link>
+
 
         <!-- Adicione mais links conforme necessário -->
       </nav>
