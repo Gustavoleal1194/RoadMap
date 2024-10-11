@@ -23,6 +23,11 @@ function addTask() {
 function removeTask(nomeQualquer) {
   tarefas.value = tarefas.value.filter((tarefa) => tarefa.id !== nomeQualquer)
 }
+function checkStatus(tarefa){
+  tarefa.status = !tarefa.status
+
+}
+
 </script>
 <template>
   <body>
@@ -63,9 +68,12 @@ function removeTask(nomeQualquer) {
     <div class="title"><h1>Tarefas</h1></div>
     <div class="task-list">
       <ul>
-        <li v-for="xixicoco in tarefas" :key="xixicoco.id">
-          <div class="taskLine">
-            <strong>{{ xixicoco.nome }}</strong
+        <li v-for="xixicoco in tarefas" :key="xixicoco.id" :class="{
+        tarefaAguardando: !xixicoco.status,
+        tarefaCompleta: xixicoco.status
+    }">
+          <div class="taskLine" @click="checkStatus(xixicoco)">
+            <strong >{{ xixicoco.nome }}</strong
             ><span
               ><theButton @click="removeTask(xixicoco.id)" style="background-color: red"
                 >Remover</theButton
@@ -160,5 +168,13 @@ body {
   display: flex;
   margin: 10px;
   justify-content: space-between;
+
 }
+ .tarefaCompleta{
+  background-color: lightgreen;
+ } 
+
+ .tarefaAguardando{
+  background-color: yellow;
+ }
 </style>
