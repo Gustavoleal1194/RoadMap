@@ -28,14 +28,14 @@ function addTask() {
     </div>
     <div class="title">
       <form @submit.prevent="addTask" action="">
-        <label for="input1" class="fontLabel">Primeiro tarefa</label>
-        <div class="padding">
-          <inputText id="input1" v-model="inputValue1"> </inputText>
+        <label for="input1" class="fontLabel">Tarefa</label>
+        <div class="paddingNome">
+          <inputText id="input1" v-model="inputValue1" style="width: 580px"> </inputText>
         </div>
         <label for="input1" class="fontLabel">Descrição da tarefa(opcional)</label>
 
-        <div class="padding">
-          <inputText id="input2" v-model="inputValue2"> </inputText>
+        <div class="paddingDescricao">
+          <textarea id="input2" v-model="inputValue2" rows="4" cols="50"></textarea>
         </div>
         <div class="theButton">
           <theButton type="submit" :disabled="inputValue1 === ''" style="width: 275px"
@@ -54,16 +54,19 @@ function addTask() {
     <div class="title"><h1>Tarefas</h1></div>
     <div class="task-list">
       <ul>
-        <hr class="full-width-line" />
         <li v-for="xixicoco in tarefas" :key="xixicoco.id">
-          <hr />
-          <div>
-            <strong>{{ xixicoco.nome }}</strong>
+          <div class="taskLine">
+            <strong>{{ xixicoco.nome }}</strong
+            ><span><theButton style="background-color: red">Remover</theButton></span>
           </div>
-          {{ xixicoco.descricao }}
+          <div class="backDescription">
+            <p>{{ xixicoco.descricao }}</p>
+          </div>
+          <hr class="full-width-line" />
         </li>
       </ul>
     </div>
+    <br /><br />
   </body>
 </template>
 
@@ -80,8 +83,18 @@ body {
   font-size: 28px;
   color: white;
 }
-.padding {
+.paddingDescricao {
+  width: 600px;
   padding: 12px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+.paddingNome {
+  padding: 12px;
+  display: flex;
 }
 .fontLabel {
   font-size: 18px;
@@ -97,21 +110,40 @@ body {
 .task-list {
   width: 30%;
   padding: 10px;
-  border: 1px solid pink ;
+  border: 1px solid pink;
   border-radius: 16px;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   background-color: white;
   justify-content: center;
-  color: #333333; 
-  margin-top: 20px;
-  
+  color: #333333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.task-list p {
+  flex-grow: 1;
+  margin: 0;
 }
 .full-width-line {
-  width: 100%; 
-  border: none; 
-  border-bottom: 1px solid black; 
-  border-top: 1px solid black; 
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.backDescription {
+  background-color: bisque;
+  padding: auto;
+  margin: 10px;
+  white-space: pre-wrap;
+}
+.taskLine {
+  align-items: center;
+  padding: auto;
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
 }
 </style>
