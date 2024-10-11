@@ -20,6 +20,9 @@ function addTask() {
     inputValue2.value = ''
   }
 }
+function removeTask(nomeQualquer) {
+  tarefas.value = tarefas.value.filter((tarefa) => tarefa.id !== nomeQualquer)
+}
 </script>
 <template>
   <body>
@@ -35,7 +38,13 @@ function addTask() {
         <label for="input1" class="fontLabel">Descrição da tarefa(opcional)</label>
 
         <div class="paddingDescricao">
-          <textarea id="input2" v-model="inputValue2" rows="4" cols="50"></textarea>
+          <textarea
+            id="input2"
+            v-model="inputValue2"
+            rows="4"
+            cols="50"
+            style="color: #333333; padding: 12px; resize: none"
+          ></textarea>
         </div>
         <div class="theButton">
           <theButton type="submit" :disabled="inputValue1 === ''" style="width: 275px"
@@ -57,7 +66,11 @@ function addTask() {
         <li v-for="xixicoco in tarefas" :key="xixicoco.id">
           <div class="taskLine">
             <strong>{{ xixicoco.nome }}</strong
-            ><span><theButton style="background-color: red">Remover</theButton></span>
+            ><span
+              ><theButton @click="removeTask(xixicoco.id)" style="background-color: red"
+                >Remover</theButton
+              ></span
+            >
           </div>
           <div class="backDescription">
             <p>{{ xixicoco.descricao }}</p>
@@ -108,6 +121,7 @@ body {
   margin-top: 20px;
 }
 .task-list {
+  min-height: 150px;
   width: 30%;
   padding: 10px;
   border: 1px solid pink;
@@ -137,7 +151,8 @@ body {
   background-color: bisque;
   padding: auto;
   margin: 10px;
-  white-space: pre-wrap;
+  white-space: break-spaces;
+  overflow-wrap: break-word;
 }
 .taskLine {
   align-items: center;
