@@ -1,12 +1,15 @@
+<script setup>
+import { RouterView } from 'vue-router'
+</script>
+
 <template>
   <div>
     <header>
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/about">about</router-link>
-        <router-link to="/contador-simples">Contador</router-link>
-        <router-link to="/contador-teste">contador-teste</router-link>
-
+        <router-link to="/contador-teste">Contador</router-link>
+        <router-link to="/toDoList">To do List</router-link>
 
         <!-- Adicione mais links conforme necessário -->
       </nav>
@@ -16,10 +19,6 @@
     </main>
   </div>
 </template>
-
-<script setup>
-import { RouterView } from 'vue-router';
-</script>
 
 <style scoped>
 header {

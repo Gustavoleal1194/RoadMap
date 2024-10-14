@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import contadorSimples from '../views/contadorSimples.vue'; // Importe o componente
 import ContadorTeste from '@/views/contadorTeste.vue';
+import HomeView from '../views/HomeView.vue';
+import ToDoList from '@/views/toDoList.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,15 +17,15 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/contador-simples', // Defina o caminho para o novo componente
-      name: 'contador-simples',
-      component: contadorSimples // Defina o componente para esta rota
-    },
-    {
-      path: '/contador-teste', // Defina o caminho para o novo componente
+      path: '/contador-teste', 
       name: 'contador-teste',
-      component: ContadorTeste // Defina o componente para esta rota
+      component: ContadorTeste 
+    },{
+      path: '/toDoList', 
+      name: 'toDoList',
+      component: ToDoList
     }
+    
   ]
 });
 
