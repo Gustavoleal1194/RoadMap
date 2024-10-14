@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 import ContadorTeste from '@/views/contadorTeste.vue';
+import HomeView from '../views/HomeView.vue';
 import ToDoList from '@/views/toDoList.vue';
 
 const router = createRouter({

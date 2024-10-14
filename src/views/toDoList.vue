@@ -2,22 +2,22 @@
 import { ref } from 'vue'
 
 const mensagem = ref('Formulario tarefas')
-const inputValue1 = ref('')
-const inputValue2 = ref('')
+const inputName = ref('')
+const inputDescription = ref('')
 let idTarefa = 1
 
 const tarefas = ref([])
 
 function addTask() {
-  if (inputValue1.value.trim !== '') {
+  if (inputName.value.trim !== '') {
     tarefas.value.push({
       id: idTarefa++,
-      nome: inputValue1.value,
-      descricao: inputValue2.value.trim() !== '' ? inputValue2.value : '',
+      nome: inputName.value,
+      descricao: inputDescription.value.trim() !== '' ? inputDescription.value : '',
       status: false
     })
-    inputValue1.value = ''
-    inputValue2.value = ''
+    inputName.value = ''
+    inputDescription.value = ''
   }
 }
 function removeTask(nomeQualquer) {
@@ -38,50 +38,50 @@ function checkStatus(tarefa){
       <form @submit.prevent="addTask" action="">
         <label for="input1" class="fontLabel">Tarefa</label>
         <div class="paddingNome">
-          <inputText id="input1" v-model="inputValue1" style="width: 580px"> </inputText>
+          <inputText id="input1" v-model="inputName" style="width: 580px"> </inputText>
         </div>
         <label for="input1" class="fontLabel">Descrição da tarefa(opcional)</label>
 
         <div class="paddingDescricao">
           <textarea
             id="input2"
-            v-model="inputValue2"
+            v-model="inputDescription"
             rows="4"
             cols="50"
             style="color: #333333; padding: 12px; resize: none"
           ></textarea>
         </div>
         <div class="theButton">
-          <theButton type="submit" :disabled="inputValue1 === ''" style="width: 275px"
+          <theButton type="submit" :disabled="inputName === ''" style="width: 275px"
             >Submit</theButton
           >
         </div>
       </form>
     </div>
     <div class="title">
-      <p>Valor do primeiro input: {{ inputValue1 }}</p>
+      <p>Valor do primeiro input: {{ inputName }}</p>
     </div>
     <div class="title">
-      <p>Valor do primeiro input: {{ inputValue2 }}</p>
+      <p>Valor do primeiro input: {{ inputDescription }}</p>
     </div>
 
     <div class="title"><h1>Tarefas</h1></div>
     <div class="task-list">
       <ul>
-        <li v-for="xixicoco in tarefas" :key="xixicoco.id" :class="{
-        tarefaAguardando: !xixicoco.status,
-        tarefaCompleta: xixicoco.status
+        <li v-for="taskKey in tarefas" :key="taskKey.id" :class="{
+        tarefaAguardando: !taskKey.status,
+        tarefaCompleta: taskKey.status
     }">
-          <div class="taskLine" @click="checkStatus(xixicoco)">
-            <strong >{{ xixicoco.nome }}</strong
+          <div class="taskLine" @click="checkStatus(taskKey)">
+            <strong >{{ taskKey.nome }}</strong
             ><span
-              ><theButton @click="removeTask(xixicoco.id)" style="background-color: red"
+              ><theButton @click="removeTask(taskKey.id)" style="background-color: red"
                 >Remover</theButton
               ></span
             >
           </div>
           <div class="backDescription">
-            <p>{{ xixicoco.descricao }}</p>
+            <p>{{ taskKey.descricao }}</p>
           </div>
           <hr class="full-width-line" />
         </li>
@@ -92,89 +92,98 @@ function checkStatus(tarefa){
 </template>
 
 <style scoped>
+.backDescription {
+  background-color: bisque;
+  margin: 10px;
+  overflow-wrap: break-word;
+  padding: auto;
+  white-space: break-spaces;
+}
+
 body {
   background-color: #333333;
 }
-.title {
-  background-color: #333333;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-  color: white;
-}
-.paddingDescricao {
-  width: 600px;
-  padding: 12px;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  align-items: center;
-}
-.paddingNome {
-  padding: 12px;
-  display: flex;
-}
+
 .fontLabel {
   font-size: 18px;
   margin-left: 10px;
 }
-.theButton {
+
+.full-width-line {
+  border: none;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+.paddingDescricao {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px;
+  width: 600px;
 }
+
+.paddingNome {
+  display: flex;
+  padding: 12px;
+}
+
+.taskLine {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: auto;
+}
+
 .task-list {
-  min-height: 150px;
-  width: 30%;
-  padding: 10px;
+  background-color: white;
   border: 1px solid pink;
   border-radius: 16px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  background-color: white;
-  justify-content: center;
   color: #333333;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  min-height: 150px;
+  padding: 10px;
+  width: 30%;
 }
+
 .task-list p {
   flex-grow: 1;
   margin: 0;
 }
-.full-width-line {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-}
 
-.backDescription {
-  background-color: bisque;
-  padding: auto;
-  margin: 10px;
-  white-space: break-spaces;
-  overflow-wrap: break-word;
-}
-.taskLine {
+.theButton {
   align-items: center;
-  padding: auto;
   display: flex;
-  margin: 10px;
-  justify-content: space-between;
-
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
- .tarefaCompleta{
-  background-color: lightgreen;
- } 
 
- .tarefaAguardando{
+.tarefaAguardando {
   background-color: yellow;
- }
+}
+
+.tarefaCompleta {
+  background-color: lightgreen;
+}
+
+.title {
+  align-items: center;
+  background-color: #333333;
+  color: white;
+  display: flex;
+  font-size: 28px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 </style>
