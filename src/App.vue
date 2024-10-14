@@ -10,8 +10,9 @@ import { RouterView } from 'vue-router'
         <router-link to="/about">about</router-link>
         <router-link to="/contador-teste">Contador</router-link>
         <router-link to="/toDoList">To do List</router-link>
+        <router-link to="/blogRoutes">Blog Routes</router-link>
 
-        <!-- Adicione mais links conforme necessário -->
+
       </nav>
     </header>
     <main>
