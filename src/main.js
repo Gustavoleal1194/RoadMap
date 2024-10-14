@@ -18,6 +18,9 @@ import Breadcrumb from 'primevue/breadcrumb'
 import Card from 'primevue/card'
 import Chip from 'primevue/chip'
 import DatePicker from 'primevue/datepicker'
+
+import Dialog from 'primevue/dialog';
+
 import FileUpload from 'primevue/fileupload'
 import FloatLabel from 'primevue/floatlabel'
 import Image from 'primevue/image'
@@ -37,9 +40,11 @@ import Tooltip from 'primevue/tooltip'
 import ToastService from 'primevue/toastservice'
 import 'primeicons/primeicons.css'
 
+
 const app = createApp(App)
 
 // ----------- GLOBAL COMPONENTS DECLARATIONS -----------
+app.component('TheDialog',Dialog)
 app.component('TheAccordion', Accordion)
 app.component('AccordionPanel', AccordionPanel)
 app.component('AccordionHeader', AccordionHeader)
