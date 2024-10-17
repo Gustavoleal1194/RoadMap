@@ -1,19 +1,18 @@
 <script setup>
-
-
-
-
+import { passaValor } from '@/utils/functions/windon_function';
 </script>
 
 
 <template>
   <div>
-    <h2>Catalogo de carros<span><theButton >Next</theButton></span></h2>
+    <h2><span><theButton>Previous</theButton></span>Catalogo de Motos <span><theButton>Next</theButton></span></h2>
+
     <ul>
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          @click="passaValor"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -24,7 +23,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -35,7 +34,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -46,7 +45,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -57,7 +56,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -68,7 +67,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -79,7 +78,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -90,7 +89,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -101,7 +100,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -112,7 +111,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -123,7 +122,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -134,7 +133,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -145,7 +144,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -156,7 +155,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -167,7 +166,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"
@@ -178,7 +177,7 @@
       <li>
         <h1>Carro Nome</h1>
         <img
-          src="https://img.freepik.com/vetores-gratis/carro-esportivo-azul-isolado-no-branco-vector_53876-67354.jpg"
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQPe1DrHxYK2t1QAQhnUluszPe157QFta6dl0U65tDm8-bpHXZhxMtslTq2E6YNNbGt5zyeEK7Swq-aam2-_0xg08jfJLOGo9lB_6AhopI&usqp=CAE"
           alt="Carro esportivo azul"
           width="250"
           height="300"

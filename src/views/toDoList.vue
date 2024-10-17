@@ -8,18 +8,7 @@ let idTarefa = 1
 
 const tarefas = ref([])
 
-function addTask() {
-  if (inputName.value.trim !== '') {
-    tarefas.value.push({
-      id: idTarefa++,
-      nome: inputName.value,
-      descricao: inputDescription.value.trim() !== '' ? inputDescription.value : '',
-      status: false
-    })
-    inputName.value = ''
-    inputDescription.value = ''
-  }
-}
+
 function removeTask(nomeQualquer) {
   tarefas.value = tarefas.value.filter((tarefa) => tarefa.id !== nomeQualquer)
 }
@@ -27,6 +16,18 @@ function checkStatus(tarefa){
   tarefa.status = !tarefa.status
 
 }
+function addTask() {
+    if (inputName.value.trim !== '') {
+      tarefas.value.push({
+        id: idTarefa++,
+        nome: inputName.value,
+        descricao: inputDescription.value.trim() !== '' ? inputDescription.value : '',
+        status: false
+      })
+      inputName.value = ''
+      inputDescription.value = ''
+    }
+  }
 
 </script>
 <template>
