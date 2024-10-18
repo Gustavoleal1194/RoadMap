@@ -120,67 +120,63 @@ NotaDessaPorra(5)
 function calcularImc(peso, altura) {
   var imc
   imc = peso / (altura * altura)
-  var pesoMinIdeal= 18.5 * (altura * altura)
-  var pesoMaxIdeal= 24.9 * (altura * altura)
-
+  var pesoMinIdeal = 18.5 * (altura * altura)
+  var pesoMaxIdeal = 24.9 * (altura * altura)
 
   if (imc < 18.5) {
-    console.log('resultado: ' + imc.toFixed(2) + ' abaixo do peso')
-  } else if (imc > 18.5 && imc < 24.9) {
-    console.log('resultado: ' + imc.toFixed(2) + ' peso normal')
-  } else if (imc > 25 && imc.toFixed(2) < 29.9) {
-    console.log('resultado: ' + imc.toFixed(2) + ' Sobrepeso')
-  } else if (imc > 30 && imc < 34.9) {
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 1')
-  } else if (imc > 35 && imc < 39.9) {
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 2(severa)')
-  } else if (imc > 40) {
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 3(morbida)')
-  }
-  
-  console.log(imc)
-  
-  console.log('seu peso minumo ideal é : ' + pesoMinIdeal )
-  console.log('seu peso maximo ideal é : ' + pesoMaxIdeal )
+    console.log('resultado: ' + imc.toFixed(2) + ' abaixo do peso');
+} else if (imc >= 18.5 && imc < 25) {
+    console.log('resultado: ' + imc.toFixed(2) + ' peso normal');
+} else if (imc >= 25 && imc < 30) { 
+    console.log('resultado: ' + imc.toFixed(2) + ' Sobrepeso');
+} else if (imc >= 30 && imc < 35) {
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 1');
+} else if (imc >= 35 && imc < 40) { 
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 2 (severa)');
+} else {
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 3 (mórbida)');
+}
 
+
+  console.log(imc)
+
+  console.log('seu peso minumo ideal é : ' + pesoMinIdeal)
+  console.log('seu peso maximo ideal é : ' + pesoMaxIdeal)
 }
 calcularImc(80, 1.8)
 
-function Calculadora2Numeros(operacao,n1,n2){
-var somar
-var dividir
-var multiplicar
-var subtrair
+function Calculadora2Numeros(operacao, n1, n2) {
+  var somar
+  var dividir
+  var multiplicar
+  var subtrair
 
-switch(operacao){
-  case 1:
-    somar = n1 + n2
-    console.log('o valor da soma é ' + somar)
-    break
+  switch (operacao) {
+    case 1:
+      somar = n1 + n2
+      console.log('o valor da soma é ' + somar)
+      break
     case 2:
-    subtrair = n1 - n2
-    console.log('o valor da soma é ' + subtrair)
-    break
+      subtrair = n1 - n2
+      console.log('o valor da soma é ' + subtrair)
+      break
     case 3:
-    multiplicar = n1 * n2
-    console.log('o valor da multiplicação é ' + multiplicar)
-    break
+      multiplicar = n1 * n2
+      console.log('o valor da multiplicação é ' + multiplicar)
+      break
     case 4:
-    dividir = n1 /n2 
-    console.log('o valor da divisão é ' + dividir)
-
-} 
+      dividir = n1 / n2
+      console.log('o valor da divisão é ' + dividir)
+  }
 }
-Calculadora2Numeros(1,2,2)
+Calculadora2Numeros(1, 2, 2)
 
-function calculaSalario(salarioBruto,horasExtras,descontos){
-
+function calculaSalario(salarioBruto, horasExtras, descontos) {
   var totalExtra = horasExtras * 20
 
-  var totalSalario = (totalExtra +salarioBruto) - descontos 
+  var totalSalario = totalExtra + salarioBruto - descontos
 
-  console.log('valor Salario liquido :'+ totalSalario)
+  console.log('valor Salario liquido :' + totalSalario)
 }
 
-calculaSalario(1900,5,250)
-
+calculaSalario(1900, 5, 250)

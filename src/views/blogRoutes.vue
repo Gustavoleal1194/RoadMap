@@ -11,10 +11,10 @@
            <h1> <router-link :to="{ name: 'Carros' }">Carros</router-link></h1>
       </li>
       <li>
-      <h1>  <router-link :to="{ name: 'blogRoutes-motos' }">Motos</router-link></h1>
+      <h1>  <router-link :to="{ name: 'Motos' }">Motos</router-link></h1>
       </li>
       <li>
-      <h1>  <router-link :to="{ name: 'blogRoutes-barcos' }">Barcos</router-link></h1>
+      <h1>  <router-link :to="{ name: 'Barcos' }">Barcos</router-link></h1>
       </li>
     </ul>
     <router-view></router-view>

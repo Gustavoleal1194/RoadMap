@@ -3,6 +3,12 @@ import { computed, reactive, ref, watch, watchEffect } from 'vue'
 
 let isPrime = true
 
+const numero = ref(0)
+
+numero.value
+
+numberObject.contar
+
 const numberObject = reactive({
   contar: 0,
   verificarPar: '',
@@ -28,6 +34,7 @@ function incremento() {
   numberObject.contar++
 }
 
+
 watch(
   () => numberObject.contar,
   (novoNumero) => {
@@ -38,7 +45,6 @@ watch(
     }
   }
 )
-
 watchEffect(() => {
   if (numberObject.contar < 2) {
     numberObject.valorPrimo = 'Não é Primo'

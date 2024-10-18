@@ -21,7 +21,7 @@ function addTask() {
       tarefas.value.push({
         id: idTarefa++,
         nome: inputName.value,
-        descricao: inputDescription.value.trim() !== '' ? inputDescription.value : '',
+        descricao:inputDescription.value,
         status: false
       })
       inputName.value = ''

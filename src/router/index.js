@@ -39,19 +39,19 @@ const router = createRouter({
             // },
       children: [
         {
+          path: 'missan-blogRoutes-Carros',
           name: 'Carros',
-          path: 'missan-blogRoutes-carros',
           component: BlogPage1,
         
         },
         {
-          path: 'Motos',
-          name: 'blogRoutes-motos',
+          path: 'blog-routes-Motos',
+          name: 'Motos',
           component: BlogPage2
         },
         {
-          path: 'Barcos',
-          name: 'blogRoutes-barcos',
+          path: 'blogRoutes-Barcos',
+          name: 'Barcos',
           component: BlogPage3
         }
       ]
