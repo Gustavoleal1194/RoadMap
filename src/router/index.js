@@ -1,7 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import contadorSimples from '../views/contadorSimples.vue'; // Importe o componente
-import ContadorTeste from '@/views/contadorTeste.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import ContadorTeste from '@/views/contadorTeste.vue'
+import HomeView from '../views/HomeView.vue'
+import ToDoList from '@/views/toDoList.vue'
+import BlogRoutes from '@/views/blogRoutes.vue'
+import BlogPage1 from '@/views/blogPage1.vue'
+import BlogPage2 from '@/views/blogPage2.vue'
+import BlogPage3 from '@/views/blogPage3.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,20 +21,56 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/contador-simples', // Defina o caminho para o novo componente
-      name: 'contador-simples',
-      component: contadorSimples // Defina o componente para esta rota
+      path: '/contador-teste',
+      name: 'contador-teste',
+      component: ContadorTeste
     },
     {
-      path: '/contador-teste', // Defina o caminho para o novo componente
-      name: 'contador-teste',
-      component: ContadorTeste // Defina o componente para esta rota
+      path: '/toDoList',
+      name: 'toDoList',
+      component: ToDoList
+    },
+    {
+      path: '/blogRoutes',
+      name: 'blogRoutes',
+            component: BlogRoutes,
+            // beforeEnter:(to,from) =>{
+
+            // },
+      children: [
+        {
+          path: 'missan-blogRoutes-Carros',
+          name: 'Carros',
+          component: BlogPage1,
+        
+        },
+        {
+          path: 'blog-routes-Motos',
+          name: 'Motos',
+          component: BlogPage2
+        },
+        {
+          path: 'blogRoutes-Barcos',
+          name: 'Barcos',
+          component: BlogPage3
+        }
+      ]
     }
   ]
-});
+})
 
-router.beforeEach((_, __, next) => {
-  next();
-});
+const data = Date.now()
 
-export default router;
+router.beforeEach((to, from, next) => {
+
+  if (Date.now() < data + 100000000000000000000000) next()
+  else {
+
+   
+    if (from.name !== 'home' && to.name !== 'home') {
+      next({ name: 'home' })
+    } else next()
+  }
+})
+
+export default router
