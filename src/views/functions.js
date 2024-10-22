@@ -124,19 +124,18 @@ function calcularImc(peso, altura) {
   var pesoMaxIdeal = 24.9 * (altura * altura)
 
   if (imc < 18.5) {
-    console.log('resultado: ' + imc.toFixed(2) + ' abaixo do peso');
-} else if (imc >= 18.5 && imc < 25) {
-    console.log('resultado: ' + imc.toFixed(2) + ' peso normal');
-} else if (imc >= 25 && imc < 30) { 
-    console.log('resultado: ' + imc.toFixed(2) + ' Sobrepeso');
-} else if (imc >= 30 && imc < 35) {
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 1');
-} else if (imc >= 35 && imc < 40) { 
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 2 (severa)');
-} else {
-    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 3 (mórbida)');
-}
-
+    console.log('resultado: ' + imc.toFixed(2) + ' abaixo do peso')
+  } else if (imc < 25) {
+    console.log('resultado: ' + imc.toFixed(2) + ' peso normal')
+  } else if (imc < 30) {
+    console.log('resultado: ' + imc.toFixed(2) + ' Sobrepeso')
+  } else if (imc < 35) {
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 1')
+  } else if (imc < 40) {
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 2 (severa)')
+  } else {
+    console.log('resultado: ' + imc.toFixed(2) + ' obesidade Grau 3 (mórbida)')
+  }
 
   console.log(imc)
 

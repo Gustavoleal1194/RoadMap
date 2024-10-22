@@ -11,6 +11,8 @@ import { RouterView } from 'vue-router'
         <router-link to="/contador-teste">Contador</router-link>
         <router-link to="/toDoList">To do List</router-link>
         <router-link to="/blogRoutes">Blog Routes</router-link>
+        <router-link to="/Carrinho-de-compras">Carrinho de compras</router-link>
+
 
 
       </nav>

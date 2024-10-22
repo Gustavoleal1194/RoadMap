@@ -1,4 +1,13 @@
 <script setup>
+import router from '@/router/index';
+import { adicionarAoCarrinho } from '@/utils/functions/cart';
+
+function adicionarItems(carro) {
+  
+  adicionarAoCarrinho(carro);
+  router.push({ name: 'carrinhoDeCompras' });
+}
+
 const carros = [
   {
     id:1,
@@ -16,6 +25,9 @@ const carros = [
     ano: '2019'
   }
 ]
+
+
+
 </script>
 
 <template>
@@ -30,6 +42,8 @@ const carros = [
 
         <h1>{{ carro.ano }}</h1>
         <h1>R$: {{ carro.preco }}</h1>
+        <br>
+        <theButton @click="adicionarItems(carro)">Adicionar ao carrinho</theButton>
       </li>
     </ul>
   </div>

@@ -1,7 +1,16 @@
 <script setup>
+import router from '@/router/index'
+
+import { adicionarAoCarrinho } from '@/utils/functions/cart';
+function adicionarItems(barcodosmano) {
+  adicionarAoCarrinho(barcodosmano);
+  router.push({ name: 'carrinhoDeCompras' });
+}
+
+
 const barcos = [
   {
-    id: 1,
+    id: 5,
     nome: 'barco 1',
     imagem:
       'https://img.freepik.com/fotos-gratis/imagem-do-barco-gerada-por-ai_23-2150647897.jpg?semt=ais_hybrid',
@@ -9,7 +18,7 @@ const barcos = [
     ano: '2020'
   },
   {
-    id: 2,
+    id: 6,
     nome: 'barco 2',
     imagem:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxwFpsOyo8nwbAYw74Go7pqCiJIEDpyhntGQ&s',
@@ -33,6 +42,7 @@ const barcos = [
 
         <h1>{{ barcodosmano.preco }}</h1>
         <h1>{{ barcodosmano.ano }}</h1>
+        <theButton @click="adicionarItems(barcodosmano)">Adicionar ao carrinho</theButton>
       </li>
     </ul>
   </div>

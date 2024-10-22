@@ -1,20 +1,43 @@
 <script setup>
+import { useRouter } from "vue-router"
+
+
+const router = useRouter()
+
+function replaceROuterCarros(){
+
+router.replace({name: 'Carros'})
+}
+
+function replaceRouterMotos(){
+router.replace({name: 'Motos'})
+
+}
+function replaceRouterBarcos(){
+router.replace({name: 'Barcos'})
+
+}
+function trocaRotas(){
+  router.push({name: 'blogRoutes'})
+}
+
+
 </script>
 
 <template>
   <div>
     
-    <h1>Compra de veiculos</h1>
+    <h1 @click="trocaRotas" style="cursor: pointer; ">Compra de veiculos</h1>
     <br>
     <ul class="list">
         <li> 
-           <h1> <router-link :to="{ name: 'Carros' }">Carros</router-link></h1>
+           <h1 @click="replaceROuterCarros" style="cursor: pointer; ">Carros</h1>
       </li>
       <li>
-      <h1>  <router-link :to="{ name: 'Motos' }">Motos</router-link></h1>
+      <h1 @click="replaceRouterMotos" style="cursor: pointer;" > Motos</h1>
       </li>
       <li>
-      <h1>  <router-link :to="{ name: 'Barcos' }">Barcos</router-link></h1>
+      <h1 @click="replaceRouterBarcos" style="cursor: pointer;"> Barcos</h1>
       </li>
     </ul>
     <router-view></router-view>
